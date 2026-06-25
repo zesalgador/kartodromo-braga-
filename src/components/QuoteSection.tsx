@@ -22,6 +22,8 @@ import { useTranslations } from "@/i18n/LanguageProvider";
 
 type SpaceType = "kartodromo" | "autodromo" | "espaco-geral";
 
+const AUTODROMO_IMAGE = "/images/vasco-sameiro-planta.png";
+
 export function QuoteSection() {
   const t = useTranslations();
   const [space, setSpace] = useState<SpaceType>("kartodromo");
@@ -48,20 +50,26 @@ export function QuoteSection() {
       label: t.quote.spaces.kartodromo.label,
       description: t.quote.spaces.kartodromo.description,
       image: "/images/pista-kart-aerea.jpg",
+      imageFit: "cover" as const,
+      imageAspect: "aspect-[4/3]",
       icon: Flag,
     },
     {
       id: "autodromo" as const,
       label: t.quote.spaces.autodromo.label,
       description: t.quote.spaces.autodromo.description,
-      image: "/images/circuito-vasco-sameiro-aereo.png",
+      image: AUTODROMO_IMAGE,
+      imageFit: "contain" as const,
+      imageAspect: "aspect-[600/416]",
       icon: Map,
     },
     {
       id: "espaco-geral" as const,
       label: t.quote.spaces.espacoGeral.label,
       description: t.quote.spaces.espacoGeral.description,
-      image: "/images/complexo-aereo.jpg",
+      image: AUTODROMO_IMAGE,
+      imageFit: "contain" as const,
+      imageAspect: "aspect-[600/416]",
       icon: Building2,
     },
   ];
@@ -182,15 +190,21 @@ export function QuoteSection() {
               })}
             </div>
 
-            <div className="relative mt-6 hidden aspect-[4/3] overflow-hidden rounded-xl border border-white/10 lg:block">
+            <div
+              className={`relative mt-6 hidden overflow-hidden rounded-xl border border-white/10 bg-kib-black lg:block ${selectedSpace.imageAspect}`}
+            >
               <Image
                 src={selectedSpace.image}
                 alt={selectedSpace.label}
                 fill
                 sizes="400px"
-                className="object-cover transition-opacity duration-500"
+                className={`transition-opacity duration-500 ${
+                  selectedSpace.imageFit === "contain"
+                    ? "object-contain object-center p-1"
+                    : "object-cover"
+                }`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-kib-black/80 to-transparent" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-kib-black/70 via-transparent to-transparent" />
               <p className="absolute right-0 bottom-0 left-0 p-4 text-sm font-semibold text-white">
                 {selectedSpace.label}
               </p>
