@@ -8,6 +8,7 @@ export const fr: Translations = {
   nav: {
     home: "Accueil",
     karts: "Karts",
+    circuit: "Circuit",
     gallery: "Galerie",
     contacts: "Contact",
     rules: "Règles",
@@ -16,6 +17,7 @@ export const fr: Translations = {
     bookContact: "Réserver / Contacter",
     openMenu: "Ouvrir le menu",
     closeMenu: "Fermer le menu",
+    backMenu: "Retour",
     logoAria: "Kartódromo Internacional de Braga — Accueil",
     selectLanguage: "Choisir la langue",
   },
@@ -57,6 +59,29 @@ export const fr: Translations = {
       title: "Nos Karts",
       description: "Découvrez la flotte CRG et les options pour tous les âges.",
     },
+  },
+  circuit: {
+    title: "Circuit Automobile",
+    subtitle: "Circuit Vasco Sameiro — sport automobile à Braga",
+    paragraph1:
+      "Le Circuit Vasco Sameiro, à Braga, est l'une des principales références du sport automobile au Portugal. Construit au début des années 1990 et inauguré en 1993, le circuit est né avec l'objectif de créer une structure permanente pour les événements automobiles, le karting et les activités liées à la vitesse. Situé à Palmeira, à côté du Kartódromo Internacional de Braga, le tracé est devenu au fil des ans un espace reconnu pour les épreuves, les entraînements et les expériences sur piste.",
+    paragraph2:
+      "Aujourd'hui, le circuit accueille différents types d'événements et d'activités, des track days aux entraînements privés, en passant par les tests de compétition, les événements d'entreprise, les drift days, les picas libres, les rencontres automobiles et les actions spéciales pour marques et groupes. C'est un espace conçu pour ceux qui recherchent l'adrénaline, la performance et un contact direct avec l'univers automobile.",
+    eventsTitle: "Types d'événements sur le circuit",
+    events: [
+      "Track days",
+      "Entraînements pour courses",
+      "Tests de compétition",
+      "Drift days",
+      "Picas libres",
+      "Événements d'entreprise",
+      "Rencontres automobiles",
+      "Présentations de marques",
+      "Expériences privées sur piste",
+    ],
+    requestQuote: "Demander un devis",
+    imageAlt:
+      "Vue aérienne du Circuit Vasco Sameiro et du Kartódromo Internacional de Braga, à Palmeira",
   },
   quote: {
     title: "Demander un Devis",

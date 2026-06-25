@@ -24,6 +24,7 @@ export interface Translations {
   nav: {
     home: string;
     karts: string;
+    circuit: string;
     gallery: string;
     contacts: string;
     rules: string;
@@ -32,6 +33,7 @@ export interface Translations {
     bookContact: string;
     openMenu: string;
     closeMenu: string;
+    backMenu: string;
     logoAria: string;
     selectLanguage: string;
   };
@@ -59,6 +61,16 @@ export interface Translations {
     pricing: { title: string; description: string };
     gallery: { title: string; description: string };
     karts: { title: string; description: string };
+  };
+  circuit: {
+    title: string;
+    subtitle: string;
+    paragraph1: string;
+    paragraph2: string;
+    eventsTitle: string;
+    events: string[];
+    requestQuote: string;
+    imageAlt: string;
   };
   quote: {
     title: string;

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { ArrowLeft, Menu } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
@@ -23,26 +23,23 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isOpen]);
-
   const contactHref = pathname === "/" ? "#contactos" : "/#contactos";
+  const closeMenu = () => setIsOpen(false);
 
   return (
     <header
-      className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "border-b border-white/10 bg-kib-black/95 backdrop-blur-md"
-          : "bg-kib-black/60 backdrop-blur-md"
+      className={`fixed top-0 right-0 left-0 z-50 transition-colors duration-150 lg:bg-kib-black/60 lg:backdrop-blur-md ${
+        isOpen
+          ? "bg-kib-black shadow-lg shadow-black/40"
+          : scrolled
+            ? "border-b border-white/10 bg-kib-black/95 backdrop-blur-md"
+            : "bg-kib-black/60 backdrop-blur-md"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-4 sm:px-6 lg:px-8">
         <Link
           href="/"
+          onClick={closeMenu}
           className="relative z-10 shrink-0 bg-transparent transition-transform duration-300 hover:scale-[1.02]"
           aria-label={t.header.logoAria}
         >
@@ -69,45 +66,63 @@ export function Header() {
         </div>
 
         <div className="ml-auto flex items-center gap-2 lg:hidden">
-          <LanguageSwitcher />
-          <button
-            type="button"
-            onClick={() => setIsOpen(!isOpen)}
-            className="rounded-lg p-2 text-white transition-colors hover:bg-white/10"
-            aria-label={isOpen ? t.header.closeMenu : t.header.openMenu}
-          >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          {!isOpen && <LanguageSwitcher />}
+          {isOpen ? (
+            <button
+              type="button"
+              onClick={closeMenu}
+              className="flex items-center gap-2 rounded-lg px-2 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/10 sm:text-base"
+              aria-label={t.header.backMenu}
+            >
+              <ArrowLeft className="h-5 w-5 shrink-0" />
+              {t.header.backMenu}
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={() => setIsOpen(true)}
+              className="rounded-lg p-2 text-white transition-colors hover:bg-white/10"
+              aria-label={t.header.openMenu}
+              aria-expanded={isOpen}
+            >
+              <Menu className="h-6 w-6" />
+            </button>
+          )}
         </div>
       </div>
 
       <div
-        className={`fixed inset-0 top-[68px] z-40 bg-kib-black/98 backdrop-blur-lg transition-all duration-300 lg:hidden ${
+        className={`overflow-hidden border-t border-white/10 bg-kib-black transition-all duration-200 ease-out lg:hidden ${
           isOpen
-            ? "pointer-events-auto opacity-100"
-            : "pointer-events-none opacity-0"
+            ? "max-h-[min(70vh,520px)] opacity-100"
+            : "pointer-events-none max-h-0 opacity-0"
         }`}
+        aria-hidden={!isOpen}
       >
-        <nav className="flex flex-col gap-2 px-6 py-8">
+        <nav className="px-4 py-3 sm:px-6">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              onClick={() => setIsOpen(false)}
-              className="rounded-xl border border-white/5 px-4 py-4 text-lg font-semibold text-white transition-all hover:border-kib-red/30 hover:bg-kib-card hover:text-kib-red"
+              onClick={closeMenu}
+              className="block border-b border-white/5 py-3.5 text-lg font-semibold text-white transition-colors last:border-b-0 hover:text-kib-red"
             >
               {link.label}
             </Link>
           ))}
+        </nav>
+
+        <div className="space-y-3 border-t border-white/10 px-4 pb-5 pt-3 sm:px-6">
           <Button
             href={contactHref}
             variant="primary"
-            className="mt-4 w-full"
-            onClick={() => setIsOpen(false)}
+            className="w-full"
+            onClick={closeMenu}
           >
             {t.header.bookContact}
           </Button>
-        </nav>
+          <LanguageSwitcher className="flex justify-center" />
+        </div>
       </div>
     </header>
   );

@@ -12,6 +12,7 @@ export function useContent() {
     const navLinks = [
       { label: t.nav.home, href: "/" },
       { label: t.nav.karts, href: "/karts" },
+      { label: t.nav.circuit, href: "/circuito" },
       { label: t.nav.gallery, href: "/galeria" },
       { label: t.nav.contacts, href: "/#contactos" },
       { label: t.nav.rules, href: "/regras-seguranca" },

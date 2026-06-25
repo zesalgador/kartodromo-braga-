@@ -8,6 +8,7 @@ export const en: Translations = {
   nav: {
     home: "Home",
     karts: "Karts",
+    circuit: "Circuit",
     gallery: "Gallery",
     contacts: "Contact",
     rules: "Rules",
@@ -16,6 +17,7 @@ export const en: Translations = {
     bookContact: "Book / Contact",
     openMenu: "Open menu",
     closeMenu: "Close menu",
+    backMenu: "Back",
     logoAria: "Kartódromo Internacional de Braga — Home",
     selectLanguage: "Select language",
   },
@@ -57,6 +59,29 @@ export const en: Translations = {
       title: "Our Karts",
       description: "Discover the CRG fleet and options for all ages.",
     },
+  },
+  circuit: {
+    title: "Motorsport Circuit",
+    subtitle: "Vasco Sameiro Circuit — motorsport in Braga",
+    paragraph1:
+      "The Vasco Sameiro Circuit in Braga is one of Portugal's leading motorsport venues. Built in the early 1990s and inaugurated in 1993, the circuit was created to provide a permanent facility for automotive events, karting and speed-related activities. Located in Palmeira, next to the Kartódromo Internacional de Braga, the track has become a recognised venue for races, training and on-track experiences.",
+    paragraph2:
+      "Today the circuit hosts a wide range of events and activities, including track days, private training, competition testing, corporate events, drift days, drag racing, car meets and special activations for brands and groups. It is a venue designed for those seeking adrenaline, performance and a direct connection with the automotive world.",
+    eventsTitle: "Types of events at the circuit",
+    events: [
+      "Track days",
+      "Race training",
+      "Competition testing",
+      "Drift days",
+      "Drag racing",
+      "Corporate events",
+      "Car meets",
+      "Brand presentations",
+      "Private track experiences",
+    ],
+    requestQuote: "Request a quote",
+    imageAlt:
+      "Aerial view of Vasco Sameiro Circuit and Kartódromo Internacional de Braga in Palmeira",
   },
   quote: {
     title: "Request a Quote",

@@ -8,6 +8,7 @@ export const pt: Translations = {
   nav: {
     home: "Início",
     karts: "Karts",
+    circuit: "Circuito",
     gallery: "Galeria",
     contacts: "Contactos",
     rules: "Regras",
@@ -16,6 +17,7 @@ export const pt: Translations = {
     bookContact: "Reservar / Contactar",
     openMenu: "Abrir menu",
     closeMenu: "Fechar menu",
+    backMenu: "Voltar",
     logoAria: "Kartódromo Internacional de Braga — Início",
     selectLanguage: "Selecionar idioma",
   },
@@ -57,6 +59,29 @@ export const pt: Translations = {
       title: "Os Nossos Karts",
       description: "Conhece a frota CRG e as opções para todas as idades.",
     },
+  },
+  circuit: {
+    title: "Circuito Automóveis",
+    subtitle: "Circuito Vasco Sameiro — desporto motorizado em Braga",
+    paragraph1:
+      "O Circuito Vasco Sameiro, em Braga, é uma das principais referências do desporto motorizado em Portugal. Construído no início da década de 1990 e inaugurado em 1993, o circuito nasceu com o objetivo de criar uma estrutura permanente para eventos automóveis, karting e atividades ligadas à velocidade. O traçado, localizado em Palmeira, junto ao Kartódromo Internacional de Braga, tornou-se ao longo dos anos um espaço reconhecido para provas, treinos e experiências em pista.",
+    paragraph2:
+      "Atualmente, o circuito recebe diferentes tipos de eventos e atividades, desde track days, treinos privados, testes de competição, eventos empresariais, drift days, picas livres, encontros automóveis e ações especiais para marcas e grupos. É um espaço pensado para quem procura adrenalina, performance e contacto direto com o mundo automóvel.",
+    eventsTitle: "Tipos de eventos no circuito",
+    events: [
+      "Track days",
+      "Treinos para corridas",
+      "Testes de competição",
+      "Drift days",
+      "Picas livres",
+      "Eventos empresariais",
+      "Encontros automóveis",
+      "Apresentações de marcas",
+      "Experiências privadas em pista",
+    ],
+    requestQuote: "Pedir orçamento",
+    imageAlt:
+      "Vista aérea do Circuito Vasco Sameiro e Kartódromo Internacional de Braga, em Palmeira",
   },
   quote: {
     title: "Pedir Orçamento",

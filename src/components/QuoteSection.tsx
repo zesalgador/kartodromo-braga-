@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Building2,
   Flag,
@@ -29,6 +29,19 @@ export function QuoteSection() {
     "idle",
   );
 
+  useEffect(() => {
+    const applyPreset = () => {
+      if (sessionStorage.getItem("kib-quote-space") === "autodromo") {
+        setSpace("autodromo");
+        sessionStorage.removeItem("kib-quote-space");
+      }
+    };
+
+    applyPreset();
+    window.addEventListener("kib-quote-preset", applyPreset);
+    return () => window.removeEventListener("kib-quote-preset", applyPreset);
+  }, []);
+
   const spaceOptions = [
     {
       id: "kartodromo" as const,
@@ -41,7 +54,7 @@ export function QuoteSection() {
       id: "autodromo" as const,
       label: t.quote.spaces.autodromo.label,
       description: t.quote.spaces.autodromo.description,
-      image: "/images/autodromo-vasco-sameiro.jpg",
+      image: "/images/circuito-vasco-sameiro-aereo.png",
       icon: Map,
     },
     {
