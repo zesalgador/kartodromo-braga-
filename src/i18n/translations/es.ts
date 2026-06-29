@@ -211,9 +211,14 @@ export const es: Translations = {
     subtitle: "Nuestra flota, la pista y la emoción del karting en Braga.",
     items: [
       {
-        title: "Jóvenes Pilotos",
-        caption: "Formación y competición para las nuevas generaciones.",
-        alt: "Grupo de jóvenes pilotos en la parrilla de salida del Kartódromo Internacional de Braga",
+        title: "Grupo en Pista",
+        caption: "Experiencias de karting en el Kartódromo Internacional de Braga.",
+        alt: "Grupo de pilotos en la parrilla de salida del Kartódromo Internacional de Braga",
+      },
+      {
+        title: "Salida X30",
+        caption: "Competición y emoción en cada salida.",
+        alt: "Grupo de karts en la salida en el Kartódromo Internacional de Braga",
       },
       {
         title: "Carrera en Pista",

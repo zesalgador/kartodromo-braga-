@@ -211,9 +211,14 @@ export const en: Translations = {
     subtitle: "Our fleet, the track and the thrill of karting in Braga.",
     items: [
       {
-        title: "Young Drivers",
-        caption: "Training and competition for the new generation.",
-        alt: "Group of young drivers on the starting grid at Kartódromo Internacional de Braga",
+        title: "Group on Track",
+        caption: "Karting experiences at Kartódromo Internacional de Braga.",
+        alt: "Group of drivers on the starting grid at Kartódromo Internacional de Braga",
+      },
+      {
+        title: "X30 Race Start",
+        caption: "Competition and excitement at every race start.",
+        alt: "Pack of karts at the race start at Kartódromo Internacional de Braga",
       },
       {
         title: "On-Track Racing",

@@ -18,7 +18,8 @@ export const siteConfig = {
 };
 
 export const galleryImageSources = [
-  { src: "/images/hero-familia-karting.jpg", featured: true as const },
+  { src: "/images/galeria-grupo-grelha.png", featured: true as const },
+  { src: "/images/galeria-x30-largada.png" },
   { src: "/images/galeria-corrida-karts.jpg" },
   { src: "/images/galeria-bastidores.jpg" },
   { src: "/images/pista-karting.jpg" },
