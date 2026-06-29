@@ -1,7 +1,7 @@
 export const siteConfig = {
   email: "secretaria@kib.pt",
-  phone: "+351 966 520 440",
-  phoneHref: "tel:+351966520440",
+  phone: "253 607 560",
+  phoneHref: "tel:+351253607560",
   emailHref: "mailto:secretaria@kib.pt",
   instagram: "@kartodromo_braga",
   instagramUrl: "https://www.instagram.com/kartodromo_braga",

@@ -9,9 +9,13 @@ import {
   User,
   Baby,
   UserPlus,
+  Mail,
+  Phone,
 } from "lucide-react";
 import { Card } from "@/components/ui/SectionTitle";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { Button } from "@/components/ui/Button";
+import { siteConfig } from "@/data/content";
 import { useContent } from "@/i18n/useContent";
 import { useTranslations } from "@/i18n/LanguageProvider";
 
@@ -143,6 +147,25 @@ export function Pricing() {
               <Shield className="h-5 w-5" />
               {t.pricing.minMax}
             </p>
+          </div>
+
+          <div className="mt-8 flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center">
+            <Button
+              href={siteConfig.emailHref}
+              variant="primary"
+              className="w-full sm:w-auto"
+            >
+              <Mail className="h-4 w-4" />
+              {t.contact.sendEmail}
+            </Button>
+            <Button
+              href={siteConfig.phoneHref}
+              variant="secondary"
+              className="w-full sm:w-auto"
+            >
+              <Phone className="h-4 w-4" />
+              {t.contact.callNow}: {siteConfig.phone}
+            </Button>
           </div>
         </div>
       </div>
