@@ -11,6 +11,7 @@ import {
   UserPlus,
   Mail,
   Phone,
+  Flag,
 } from "lucide-react";
 import { Card } from "@/components/ui/SectionTitle";
 import { SectionTitle } from "@/components/ui/SectionTitle";
@@ -94,6 +95,48 @@ export function Pricing() {
               </span>
             ))}
           </div>
+        </div>
+
+        <div className="mb-20">
+          <div className="mb-10 flex items-start gap-4">
+            <div className="hidden h-16 w-1 rounded-full bg-kib-red sm:block" />
+            <div>
+              <h3 className="text-2xl font-black uppercase text-white sm:text-3xl">
+                {t.pricing.ownKartTitle}
+              </h3>
+              <p className="mt-2 max-w-2xl text-kib-muted">
+                {t.pricing.ownKartSubtitle}
+              </p>
+            </div>
+          </div>
+
+          <Card className="relative mx-auto max-w-xl overflow-hidden">
+            <div className="absolute top-0 right-0 left-0 h-1 bg-gradient-to-r from-transparent via-kib-red to-transparent" />
+            <div className="mb-4 flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-kib-red/10">
+                <Flag className="h-5 w-5 text-kib-red" />
+              </div>
+              <h4 className="text-sm font-bold leading-tight text-white">
+                {t.pricing.ownKartTitle}
+              </h4>
+            </div>
+            <ul className="space-y-3">
+              {t.pricing.ownKartPrices.map((item) => (
+                <li
+                  key={item.duration}
+                  className="flex items-center justify-between rounded-lg border border-white/5 bg-kib-black/50 px-4 py-3"
+                >
+                  <span className="flex items-center gap-2 text-sm text-kib-muted">
+                    <Timer className="h-4 w-4 text-kib-red" />
+                    {item.duration}
+                  </span>
+                  <span className="text-lg font-black text-kib-red">
+                    {item.price}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </Card>
         </div>
 
         <div>

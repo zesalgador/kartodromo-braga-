@@ -380,6 +380,13 @@ export const pt: Translations = {
       "10 min + 60 min",
       "10 min + 90 min",
     ],
+    ownKartTitle: "Preço de Aluguer de Pista (Kart Próprio)",
+    ownKartSubtitle:
+      "Para pilotos com kart próprio que pretendem treinar ou competir na pista do kartódromo.",
+    ownKartPrices: [
+      { duration: "1 dia", price: "30€" },
+      { duration: "Meio dia", price: "18€" },
+    ],
   },
   security: {
     title: "Regras de Segurança",

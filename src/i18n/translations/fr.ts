@@ -380,6 +380,13 @@ export const fr: Translations = {
       "10 min + 60 min",
       "10 min + 90 min",
     ],
+    ownKartTitle: "Location de Piste (Kart Personnel)",
+    ownKartSubtitle:
+      "Pour les pilotes avec leur propre kart qui souhaitent s'entraîner ou concourir sur la piste du kartódromo.",
+    ownKartPrices: [
+      { duration: "1 jour", price: "30€" },
+      { duration: "Demi-journée", price: "18€" },
+    ],
   },
   security: {
     title: "Règles de Sécurité",

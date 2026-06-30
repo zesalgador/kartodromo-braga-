@@ -180,6 +180,9 @@ export interface Translations {
     };
     notes: string[];
     groupFormats: string[];
+    ownKartTitle: string;
+    ownKartSubtitle: string;
+    ownKartPrices: { duration: string; price: string }[];
   };
   security: {
     title: string;

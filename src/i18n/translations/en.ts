@@ -380,6 +380,13 @@ export const en: Translations = {
       "10 min + 60 min",
       "10 min + 90 min",
     ],
+    ownKartTitle: "Track Rental (Own Kart)",
+    ownKartSubtitle:
+      "For drivers with their own kart who want to train or compete on the kartódromo track.",
+    ownKartPrices: [
+      { duration: "1 day", price: "30€" },
+      { duration: "Half day", price: "18€" },
+    ],
   },
   security: {
     title: "Safety Rules",
