@@ -158,7 +158,7 @@ export const fr: Translations = {
       },
       aluguer: {
         title: "Horaires du Kartódromo pour les karts de location",
-        schedule: ["9:00 – 18:00"],
+        schedule: ["9:00 – 12:30", "14:00 – 18:00"],
         notes: ["Lundi — fermé", "Mardi — ouvert à partir de 14:00"],
       },
       verao: {

@@ -158,7 +158,7 @@ export const en: Translations = {
       },
       aluguer: {
         title: "Kartódromo opening hours for rental karts",
-        schedule: ["9:00 – 18:00"],
+        schedule: ["9:00 – 12:30", "14:00 – 18:00"],
         notes: ["Monday — closed", "Tuesday — open from 14:00"],
       },
       verao: {

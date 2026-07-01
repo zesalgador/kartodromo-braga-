@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { Calendar, Clock, Sun, AlertCircle } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Calendar, Clock, Sun, AlertCircle, ChevronDown } from "lucide-react";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Card } from "@/components/ui/SectionTitle";
 import { useContent } from "@/i18n/useContent";
@@ -10,9 +10,14 @@ import type { ScheduleTab } from "@/i18n/types";
 
 export function Hours() {
   const [activeTab, setActiveTab] = useState<ScheduleTab>("aluguer");
+  const [showExceptions, setShowExceptions] = useState(false);
   const { scheduleTabs, scheduleContent, scheduleClosedDays } = useContent();
   const t = useTranslations();
   const content = scheduleContent[activeTab];
+
+  useEffect(() => {
+    setShowExceptions(false);
+  }, [activeTab]);
 
   return (
     <section id="horarios" className="relative bg-kib-dark py-20 sm:py-28">
@@ -95,26 +100,41 @@ export function Hours() {
           </Card>
 
           <aside className="rounded-2xl border border-kib-red/25 bg-kib-card p-5 shadow-lg shadow-black/20 lg:sticky lg:top-28">
-            <div className="mb-4 flex items-center gap-2">
-              <AlertCircle className="h-5 w-5 shrink-0 text-kib-red" />
-              <p className="text-xs font-bold uppercase tracking-wide text-kib-red">
+            <button
+              type="button"
+              onClick={() => setShowExceptions((open) => !open)}
+              aria-expanded={showExceptions}
+              className="flex w-full items-center justify-between gap-3 rounded-xl bg-kib-red px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-kib-red-dark"
+            >
+              <span className="flex items-center gap-2">
+                <AlertCircle className="h-5 w-5 shrink-0" />
                 {t.hours.exceptionsTitle}
-              </p>
-            </div>
-            <p className="mb-4 text-xs leading-relaxed text-kib-muted">
-              {t.hours.exceptionsNote}
-            </p>
-            <ul className="space-y-2.5">
-              {scheduleClosedDays.map((day) => (
-                <li
-                  key={day}
-                  className="flex items-start gap-2 text-sm font-medium text-white"
-                >
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-kib-red" />
-                  {day}
-                </li>
-              ))}
-            </ul>
+              </span>
+              <ChevronDown
+                className={`h-5 w-5 shrink-0 transition-transform duration-200 ${
+                  showExceptions ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            {showExceptions && (
+              <div className="mt-4">
+                <p className="mb-4 text-xs leading-relaxed text-kib-muted">
+                  {t.hours.exceptionsNote}
+                </p>
+                <ul className="space-y-2.5">
+                  {scheduleClosedDays.map((day) => (
+                    <li
+                      key={day}
+                      className="flex items-start gap-2 text-sm font-medium text-white"
+                    >
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-kib-red" />
+                      {day}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </aside>
         </div>
       </div>

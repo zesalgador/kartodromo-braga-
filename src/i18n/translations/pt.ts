@@ -135,7 +135,7 @@ export const pt: Translations = {
     subtitle: "Seleciona o tipo de horário que pretendes consultar.",
     period: "Período",
     notes: "Notas",
-    exceptionsTitle: "Dias de exceção",
+    exceptionsTitle: "Dias de Exceção",
     exceptionsNote: "Válido para todos os horários do kartódromo.",
     tabs: {
       eventos: {
@@ -158,7 +158,7 @@ export const pt: Translations = {
       },
       aluguer: {
         title: "Horário do Kartódromo para karts de aluguer",
-        schedule: ["9:00 – 18:00"],
+        schedule: ["9:00 – 12:30", "14:00 – 18:00"],
         notes: ["Segunda-feira — fechado", "Terça-feira — aberto a partir das 14:00"],
       },
       verao: {

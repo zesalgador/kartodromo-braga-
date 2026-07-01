@@ -60,15 +60,15 @@ export function Hero() {
               <FileText className="h-4 w-4" />
               {t.hero.quote}
             </Button>
-            <Button href="/#horarios" variant="outline">
+            <Button href="/#horarios" variant="primary">
               <Clock className="h-4 w-4" />
               {t.hero.hours}
             </Button>
-            <Button href="/#contactos" variant="outline">
+            <Button href="/#contactos" variant="primary">
               <Phone className="h-4 w-4" />
               {t.hero.contacts}
             </Button>
-            <Button href="/precario" variant="secondary">
+            <Button href="/precario" variant="primary">
               {t.hero.pricing}
               <ChevronRight className="h-4 w-4" />
             </Button>
