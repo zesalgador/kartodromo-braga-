@@ -3,6 +3,8 @@ export const siteConfig = {
   phone: "253 607 560",
   phoneHref: "tel:+351253607560",
   emailHref: "mailto:secretaria@kib.pt",
+  gmailComposeHref:
+    "https://mail.google.com/mail/?view=cm&fs=1&to=secretaria@kib.pt",
   instagram: "@kartodromo_braga",
   instagramUrl: "https://www.instagram.com/kartodromo_braga",
   address: "Rua do Kartódromo, Palmeira, 4711-911 Braga",

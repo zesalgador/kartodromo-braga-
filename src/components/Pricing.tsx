@@ -194,9 +194,11 @@ export function Pricing() {
 
           <div className="mt-8 flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center">
             <Button
-              href={siteConfig.emailHref}
+              href={siteConfig.gmailComposeHref}
               variant="primary"
               className="w-full sm:w-auto"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Mail className="h-4 w-4" />
               {t.contact.sendEmail}

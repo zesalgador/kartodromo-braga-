@@ -22,7 +22,7 @@ export function Contact() {
       icon: Mail,
       label: t.contact.email,
       value: siteConfig.email,
-      href: siteConfig.emailHref,
+      href: siteConfig.gmailComposeHref,
     },
     {
       icon: Phone,
@@ -94,7 +94,12 @@ export function Contact() {
             </h3>
             <p className="mb-8 text-sm text-kib-muted">{t.contact.ctaText}</p>
             <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Button href={siteConfig.emailHref} variant="primary">
+              <Button
+                href={siteConfig.gmailComposeHref}
+                variant="primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Mail className="h-4 w-4" />
                 {t.contact.sendEmail}
               </Button>

@@ -49,7 +49,9 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-kib-muted">
               <li>
                 <a
-                  href={siteConfig.emailHref}
+                  href={siteConfig.gmailComposeHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="transition-colors hover:text-kib-red"
                 >
                   {siteConfig.email}
@@ -102,7 +104,9 @@ export function FloatingContact() {
             {t.footer.call}
           </a>
           <a
-            href={siteConfig.emailHref}
+            href={siteConfig.gmailComposeHref}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold text-white transition-all hover:bg-kib-red hover:text-white"
           >
             <Mail className="h-4 w-4" />
