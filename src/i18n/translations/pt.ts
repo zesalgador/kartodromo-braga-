@@ -139,8 +139,8 @@ export const pt: Translations = {
     exceptionsNote: "Válido para todos os horários do kartódromo.",
     tabs: {
       eventos: {
-        label: "Horário de Abertura para Eventos e Alugueres Privados",
-        shortLabel: "Eventos e Privados",
+        label: "Horário de aluguer para karts e motas privados (disponível até 24 julho)",
+        shortLabel: "Karts Privados",
       },
       aluguer: {
         label: "Horário karts aluguer (antes de 24 de julho)",
@@ -153,7 +153,7 @@ export const pt: Translations = {
     },
     content: {
       eventos: {
-        title: "Horário do Kartódromo para alugueres privados",
+        title: "Horário de aluguer para karts e motas privados (disponível até 24 julho)",
         schedule: ["9:00 – 13:00", "Pausa para almoço", "14:00 – 18:00", "Todos os dias"],
       },
       aluguer: {
