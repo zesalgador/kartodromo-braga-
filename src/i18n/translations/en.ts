@@ -158,8 +158,7 @@ export const en: Translations = {
       },
       aluguer: {
         title: "Rental kart hours (before 24 July)",
-        schedule: ["9:00 – 12:30", "14:30 – 19:30"],
-        notes: ["Monday — closed", "Tuesday — open from 14:30"],
+        schedule: ["9:00 – 12:30", "14:30 – 19:00"],
       },
       verao: {
         title: "Rental kart hours (24 July to 23 August)",

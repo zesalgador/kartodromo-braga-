@@ -158,8 +158,7 @@ export const fr: Translations = {
       },
       aluguer: {
         title: "Horaires karts location (avant le 24 juillet)",
-        schedule: ["9:00 – 12:30", "14:30 – 19:30"],
-        notes: ["Lundi — fermé", "Mardi — ouvert à partir de 14:30"],
+        schedule: ["9:00 – 12:30", "14:30 – 19:00"],
       },
       verao: {
         title: "Horaires karts location (24 juillet au 23 août)",
