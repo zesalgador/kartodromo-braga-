@@ -143,12 +143,12 @@ export const fr: Translations = {
         shortLabel: "Événements & Privés",
       },
       aluguer: {
-        label: "Horaires pour Karts de Location",
-        shortLabel: "Karts de Location",
+        label: "Horaires karts location (avant le 24 juillet)",
+        shortLabel: "Avant 24 juil.",
       },
       verao: {
-        label: "Horaires d'Été",
-        shortLabel: "Horaires d'Été",
+        label: "Horaires karts location (24 juillet au 23 août)",
+        shortLabel: "24 juil. – 23 août",
       },
     },
     content: {
@@ -157,13 +157,12 @@ export const fr: Translations = {
         schedule: ["9:00 – 13:00", "Pause déjeuner", "14:00 – 18:00", "Tous les jours"],
       },
       aluguer: {
-        title: "Horaires du Kartódromo pour les karts de location",
-        schedule: ["9:00 – 12:30", "14:00 – 18:00"],
-        notes: ["Lundi — fermé", "Mardi — ouvert à partir de 14:00"],
+        title: "Horaires karts location (avant le 24 juillet)",
+        schedule: ["9:00 – 12:30", "14:30 – 19:30"],
+        notes: ["Lundi — fermé", "Mardi — ouvert à partir de 14:30"],
       },
       verao: {
-        title: "Horaires d'été",
-        period: "25 juillet au 23 août",
+        title: "Horaires karts location (24 juillet au 23 août)",
         schedule: [
           "9:00 – 13:00",
           "Pause déjeuner",
