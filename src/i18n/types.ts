@@ -48,6 +48,7 @@ export interface Translations {
     hours: string;
     contacts: string;
     pricing: string;
+    vouchers: string;
     imageAlt: string;
   };
   photoPreview: {

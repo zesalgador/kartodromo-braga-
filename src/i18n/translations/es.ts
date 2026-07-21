@@ -33,6 +33,7 @@ export const es: Translations = {
     hours: "Horarios",
     contacts: "Contacto",
     pricing: "Ver Tarifas",
+    vouchers: "Vouchers",
     imageAlt:
       "Carrera de karts en el Kartódromo Internacional de Braga con arco Rotax Racing",
   },

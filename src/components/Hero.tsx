@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ChevronRight, Gauge, FileText, Clock, Phone } from "lucide-react";
+import { ChevronRight, Gauge, FileText, Clock, Phone, Gift } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { useTranslations } from "@/i18n/LanguageProvider";
 
@@ -71,6 +71,10 @@ export function Hero() {
             <Button href="/precario" variant="primary">
               {t.hero.pricing}
               <ChevronRight className="h-4 w-4" />
+            </Button>
+            <Button href="/#vouchers" variant="primary">
+              <Gift className="h-4 w-4" />
+              {t.hero.vouchers}
             </Button>
           </div>
         </div>

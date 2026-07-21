@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Gift, ChevronDown } from "lucide-react";
 import { SectionTitle } from "@/components/ui/SectionTitle";
@@ -16,6 +16,18 @@ const voucherImages = [
 export function VouchersSection() {
   const [isOpen, setIsOpen] = useState(false);
   const t = useTranslations();
+
+  useEffect(() => {
+    const openFromHash = () => {
+      if (window.location.hash === "#vouchers") {
+        setIsOpen(true);
+      }
+    };
+
+    openFromHash();
+    window.addEventListener("hashchange", openFromHash);
+    return () => window.removeEventListener("hashchange", openFromHash);
+  }, []);
 
   return (
     <section id="vouchers" className="relative bg-kib-black py-20 sm:py-28">
@@ -54,13 +66,13 @@ export function VouchersSection() {
               key={item.title}
               className="overflow-hidden rounded-2xl border border-white/10 bg-kib-card shadow-xl shadow-black/30"
             >
-              <div className="relative aspect-[16/10] w-full bg-kib-black">
+              <div className="relative aspect-[16/10] w-full bg-transparent">
                 <Image
                   src={voucherImages[index]}
                   alt={item.alt}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-contain object-center p-2"
+                  className="object-contain object-center p-3"
                 />
               </div>
               <div className="border-t border-white/10 px-5 py-4">
