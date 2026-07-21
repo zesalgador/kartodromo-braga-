@@ -62,6 +62,13 @@ export interface Translations {
     gallery: { title: string; description: string };
     karts: { title: string; description: string };
   };
+  vouchers: {
+    title: string;
+    subtitle: string;
+    showButton: string;
+    hideButton: string;
+    items: { title: string; description: string; alt: string }[];
+  };
   circuit: {
     title: string;
     subtitle: string;

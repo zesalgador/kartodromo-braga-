@@ -60,6 +60,29 @@ export const fr: Translations = {
       description: "Découvrez la flotte CRG et les options pour tous les âges.",
     },
   },
+  vouchers: {
+    title: "Chèques-Cadeaux",
+    subtitle: "Idéal pour les anniversaires et les enterrements de vie de garçon.",
+    showButton: "Chèques disponibles",
+    hideButton: "Masquer les chèques",
+    items: [
+      {
+        title: "10 Minutes en Kart CRG",
+        description: "Chèque de location de kart — plaisir, adrénaline et vitesse.",
+        alt: "Chèque-cadeau — 10 minutes en kart CRG au Kartódromo Internacional de Braga",
+      },
+      {
+        title: "20 Minutes en Kart CRG",
+        description: "Chèque de location de kart — le cadeau parfait pour les amateurs de vitesse.",
+        alt: "Chèque-cadeau — 20 minutes en kart CRG au Kartódromo Internacional de Braga",
+      },
+      {
+        title: "Action sur Piste Réservée",
+        description: "Expérience exclusive pour vous et votre groupe sur piste réservée.",
+        alt: "Chèque-cadeau — action sur piste réservée au Kartódromo Internacional de Braga",
+      },
+    ],
+  },
   circuit: {
     title: "Circuit Automobile",
     subtitle: "Circuit Vasco Sameiro — sport automobile à Braga",

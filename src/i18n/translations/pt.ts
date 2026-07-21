@@ -60,6 +60,29 @@ export const pt: Translations = {
       description: "Conhece a frota CRG e as opções para todas as idades.",
     },
   },
+  vouchers: {
+    title: "Vouchers de Oferta",
+    subtitle: "Ideal para aniversários e despedidas de solteiro.",
+    showButton: "Vouchers disponíveis",
+    hideButton: "Ocultar vouchers",
+    items: [
+      {
+        title: "10 Minutos em Kart CRG",
+        description: "Voucher de aluguer de kart — diversão, adrenalina e velocidade.",
+        alt: "Voucher de oferta — 10 minutos em kart CRG no Kartódromo Internacional de Braga",
+      },
+      {
+        title: "20 Minutos em Kart CRG",
+        description: "Voucher de aluguer de kart — o presente perfeito para quem ama velocidade.",
+        alt: "Voucher de oferta — 20 minutos em kart CRG no Kartódromo Internacional de Braga",
+      },
+      {
+        title: "Ação em Pista Reservada",
+        description: "Experiência exclusiva para ti e o teu grupo em pista reservada.",
+        alt: "Voucher de oferta — ação em pista reservada no Kartódromo Internacional de Braga",
+      },
+    ],
+  },
   circuit: {
     title: "Circuito Automóveis",
     subtitle: "Circuito Vasco Sameiro — desporto motorizado em Braga",
