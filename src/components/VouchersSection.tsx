@@ -66,7 +66,7 @@ export function VouchersSection() {
               key={item.title}
               className="overflow-hidden rounded-2xl border border-white/10 bg-kib-card shadow-xl shadow-black/30"
             >
-              <div className="relative aspect-[16/10] w-full bg-transparent">
+              <div className="relative aspect-[16/10] w-full bg-kib-black">
                 <Image
                   src={voucherImages[index]}
                   alt={item.alt}

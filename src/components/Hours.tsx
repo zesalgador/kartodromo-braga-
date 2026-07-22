@@ -7,6 +7,19 @@ import { Card } from "@/components/ui/SectionTitle";
 import { useContent } from "@/i18n/useContent";
 import { useTranslations } from "@/i18n/LanguageProvider";
 import type { ScheduleTab } from "@/i18n/types";
+import {
+  HOURS_TAB_STORAGE_KEY,
+  isSummerHoursPeriod,
+} from "@/lib/hours";
+
+function readStoredHoursTab(): ScheduleTab | null {
+  const preset = sessionStorage.getItem(HOURS_TAB_STORAGE_KEY);
+  if (preset === "verao" || preset === "aluguer" || preset === "eventos") {
+    sessionStorage.removeItem(HOURS_TAB_STORAGE_KEY);
+    return preset;
+  }
+  return null;
+}
 
 export function Hours() {
   const [activeTab, setActiveTab] = useState<ScheduleTab>("aluguer");
@@ -14,6 +27,28 @@ export function Hours() {
   const { scheduleTabs, scheduleContent, scheduleClosedDays } = useContent();
   const t = useTranslations();
   const content = scheduleContent[activeTab];
+
+  useEffect(() => {
+    const applyTabFromNavigation = () => {
+      const stored = readStoredHoursTab();
+      if (stored) {
+        setActiveTab(stored);
+        return;
+      }
+
+      if (window.location.hash === "#horarios" && isSummerHoursPeriod()) {
+        setActiveTab("verao");
+      }
+    };
+
+    applyTabFromNavigation();
+    window.addEventListener("hashchange", applyTabFromNavigation);
+    window.addEventListener("kib-hours-preset", applyTabFromNavigation);
+    return () => {
+      window.removeEventListener("hashchange", applyTabFromNavigation);
+      window.removeEventListener("kib-hours-preset", applyTabFromNavigation);
+    };
+  }, []);
 
   useEffect(() => {
     setShowExceptions(false);

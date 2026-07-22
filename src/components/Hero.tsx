@@ -4,9 +4,14 @@ import Image from "next/image";
 import { ChevronRight, Gauge, FileText, Clock, Phone, Gift } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { useTranslations } from "@/i18n/LanguageProvider";
+import { getPreferredHoursTab, presetHoursTab } from "@/lib/hours";
 
 export function Hero() {
   const t = useTranslations();
+
+  const handleHoursClick = () => {
+    presetHoursTab(getPreferredHoursTab());
+  };
 
   return (
     <section
@@ -60,7 +65,7 @@ export function Hero() {
               <FileText className="h-4 w-4" />
               {t.hero.quote}
             </Button>
-            <Button href="/#horarios" variant="primary">
+            <Button href="/#horarios" variant="primary" onClick={handleHoursClick}>
               <Clock className="h-4 w-4" />
               {t.hero.hours}
             </Button>
