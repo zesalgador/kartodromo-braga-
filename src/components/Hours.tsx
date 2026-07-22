@@ -9,7 +9,6 @@ import { useTranslations } from "@/i18n/LanguageProvider";
 import type { ScheduleTab } from "@/i18n/types";
 import {
   HOURS_TAB_STORAGE_KEY,
-  isSummerHoursPeriod,
 } from "@/lib/hours";
 
 function readStoredHoursTab(): ScheduleTab | null {
@@ -36,7 +35,7 @@ export function Hours() {
         return;
       }
 
-      if (window.location.hash === "#horarios" && isSummerHoursPeriod()) {
+      if (window.location.hash === "#horarios") {
         setActiveTab("verao");
       }
     };

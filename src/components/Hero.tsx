@@ -4,13 +4,13 @@ import Image from "next/image";
 import { ChevronRight, Gauge, FileText, Clock, Phone, Gift } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { useTranslations } from "@/i18n/LanguageProvider";
-import { getPreferredHoursTab, presetHoursTab } from "@/lib/hours";
+import { presetHoursTab } from "@/lib/hours";
 
 export function Hero() {
   const t = useTranslations();
 
   const handleHoursClick = () => {
-    presetHoursTab(getPreferredHoursTab());
+    presetHoursTab("verao");
   };
 
   return (
