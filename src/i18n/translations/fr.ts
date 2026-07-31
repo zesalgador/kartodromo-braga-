@@ -66,6 +66,11 @@ export const fr: Translations = {
     subtitle: "Idéal pour les anniversaires et les enterrements de vie de garçon.",
     showButton: "Chèques disponibles",
     hideButton: "Masquer les chèques",
+    requestByEmail: "Demander mon chèque par email",
+    pickupNote: "Possibilité de retirer le chèque au kartódromo.",
+    emailSubject: "Demande de Chèque-Cadeau — KIB",
+    emailBody:
+      "Bonjour,\n\nJe souhaite commander le chèque-cadeau suivant :\n\n(Précisez : 10 minutes / 20 minutes / Piste réservée)\n\nNom :\n\nMerci.",
     items: [
       {
         title: "10 Minutes en Kart CRG",

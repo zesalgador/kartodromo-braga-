@@ -1,10 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
-import { Gift, ChevronDown } from "lucide-react";
+import { Gift, ChevronDown, Mail } from "lucide-react";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { Button } from "@/components/ui/Button";
 import { ButtonElement } from "@/components/ui/Button";
+import { siteConfig } from "@/data/content";
 import { useTranslations } from "@/i18n/LanguageProvider";
 
 const voucherImages = [
@@ -16,6 +18,12 @@ const voucherImages = [
 export function VouchersSection() {
   const [isOpen, setIsOpen] = useState(false);
   const t = useTranslations();
+
+  const voucherEmailHref = useMemo(
+    () =>
+      `${siteConfig.gmailComposeHref}&su=${encodeURIComponent(t.vouchers.emailSubject)}&body=${encodeURIComponent(t.vouchers.emailBody)}`,
+    [t.vouchers.emailSubject, t.vouchers.emailBody],
+  );
 
   useEffect(() => {
     const openFromHash = () => {
@@ -54,35 +62,51 @@ export function VouchersSection() {
         </div>
 
         <div
-          className={`grid gap-6 transition-all duration-300 sm:grid-cols-2 lg:grid-cols-3 ${
+          className={`transition-all duration-300 ${
             isOpen
               ? "pointer-events-auto mt-10 max-h-[5000px] opacity-100"
               : "pointer-events-none mt-0 max-h-0 overflow-hidden opacity-0"
           }`}
           aria-hidden={!isOpen}
         >
-          {t.vouchers.items.map((item, index) => (
-            <article
-              key={item.title}
-              className="overflow-hidden rounded-2xl border border-white/10 bg-kib-card shadow-xl shadow-black/30"
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {t.vouchers.items.map((item, index) => (
+              <article
+                key={item.title}
+                className="overflow-hidden rounded-2xl border border-white/10 bg-kib-card shadow-xl shadow-black/30"
+              >
+                <div className="relative aspect-[16/10] w-full bg-kib-black">
+                  <Image
+                    src={voucherImages[index]}
+                    alt={item.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-contain object-center p-3"
+                  />
+                </div>
+                <div className="border-t border-white/10 px-5 py-4">
+                  <h3 className="text-base font-bold text-white sm:text-lg">
+                    {item.title}
+                  </h3>
+                  <p className="mt-1 text-sm text-kib-muted">{item.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-col items-center gap-3 text-center">
+            <Button
+              href={voucherEmailHref}
+              variant="primary"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto"
             >
-              <div className="relative aspect-[16/10] w-full bg-kib-black">
-                <Image
-                  src={voucherImages[index]}
-                  alt={item.alt}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-contain object-center p-3"
-                />
-              </div>
-              <div className="border-t border-white/10 px-5 py-4">
-                <h3 className="text-base font-bold text-white sm:text-lg">
-                  {item.title}
-                </h3>
-                <p className="mt-1 text-sm text-kib-muted">{item.description}</p>
-              </div>
-            </article>
-          ))}
+              <Mail className="h-4 w-4" />
+              {t.vouchers.requestByEmail}
+            </Button>
+            <p className="max-w-md text-sm text-kib-muted">{t.vouchers.pickupNote}</p>
+          </div>
         </div>
       </div>
     </section>

@@ -66,6 +66,11 @@ export const pt: Translations = {
     subtitle: "Ideal para aniversários e despedidas de solteiro.",
     showButton: "Vouchers disponíveis",
     hideButton: "Ocultar vouchers",
+    requestByEmail: "Solicitar o meu voucher por email",
+    pickupNote: "Possibilidade de recolha do voucher no kartódromo.",
+    emailSubject: "Pedido de Voucher — KIB",
+    emailBody:
+      "Olá,\n\nGostaria de solicitar o seguinte voucher:\n\n(Indique: 10 minutos / 20 minutos / Pista reservada)\n\nNome:\n\nObrigado.",
     items: [
       {
         title: "10 Minutos em Kart CRG",

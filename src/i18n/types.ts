@@ -68,6 +68,10 @@ export interface Translations {
     subtitle: string;
     showButton: string;
     hideButton: string;
+    requestByEmail: string;
+    pickupNote: string;
+    emailSubject: string;
+    emailBody: string;
     items: { title: string; description: string; alt: string }[];
   };
   circuit: {
