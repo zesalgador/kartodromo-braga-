@@ -49,6 +49,7 @@ export interface Translations {
     contacts: string;
     pricing: string;
     vouchers: string;
+    privateTrackRental: string;
     imageAlt: string;
   };
   photoPreview: {
@@ -177,6 +178,8 @@ export interface Translations {
     individualSubtitle: string;
     groupTitle: string;
     groupSubtitle: string;
+    groupKarts: string;
+    groupFeatures: string[];
     groupBanner: string;
     formatLabel: string;
     minMax: string;

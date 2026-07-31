@@ -34,6 +34,7 @@ export const es: Translations = {
     contacts: "Contacto",
     pricing: "Ver Tarifas",
     vouchers: "Vouchers",
+    privateTrackRental: "Alquiler de pista privado",
     imageAlt:
       "Carrera de karts en el Kartódromo Internacional de Braga con arco Rotax Racing",
   },
@@ -382,6 +383,12 @@ export const es: Translations = {
     groupTitle: "Alquiler de Grupo",
     groupSubtitle:
       "Formato ideal para grupos, empresas, cumpleaños, reuniones y eventos privados.",
+    groupKarts: "Utilizamos karts CRG 390cc en estos eventos.",
+    groupFeatures: [
+      "Cronometraje y flexibilidad en la organización de las sesiones (Entrenamientos, Clasificación, Carreras)",
+      "Cascos incluidos",
+      "Personal en pista para controlar la seguridad del evento",
+    ],
     groupBanner: "Precios Alquiler de Grupo — 12 a 20 karts",
     formatLabel: "Formato",
     minMax: "Mínimo 12 participantes | Máximo 20 participantes",

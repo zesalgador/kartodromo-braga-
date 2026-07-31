@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ChevronRight, Gauge, FileText, Clock, Phone, Gift } from "lucide-react";
+import { ChevronRight, Gauge, FileText, Clock, Phone, Gift, Users } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { useTranslations } from "@/i18n/LanguageProvider";
 import { presetHoursTab } from "@/lib/hours";
@@ -80,6 +80,10 @@ export function Hero() {
             <Button href="/#vouchers" variant="primary">
               <Gift className="h-4 w-4" />
               {t.hero.vouchers}
+            </Button>
+            <Button href="/precario#aluguer-grupo" variant="primary">
+              <Users className="h-4 w-4" />
+              {t.hero.privateTrackRental}
             </Button>
           </div>
         </div>

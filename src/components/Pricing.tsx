@@ -12,6 +12,9 @@ import {
   Mail,
   Phone,
   Flag,
+  Gauge,
+  HardHat,
+  CheckCircle2,
 } from "lucide-react";
 import { Card } from "@/components/ui/SectionTitle";
 import { SectionTitle } from "@/components/ui/SectionTitle";
@@ -25,6 +28,8 @@ const pricingIcons = {
   child: Baby,
   users: UserPlus,
 };
+
+const groupFeatureIcons = [Timer, HardHat, Shield] as const;
 
 export function Pricing() {
   const { individualPricing, individualNotes, groupPricing } = useContent();
@@ -139,16 +144,42 @@ export function Pricing() {
           </Card>
         </div>
 
-        <div>
+        <div id="aluguer-grupo" className="scroll-mt-28">
           <div className="mb-10 flex items-start gap-4">
             <div className="hidden h-16 w-1 rounded-full bg-kib-red sm:block" />
-            <div>
+            <div className="w-full">
               <h3 className="text-2xl font-black uppercase text-white sm:text-3xl">
                 {t.pricing.groupTitle}
               </h3>
-              <p className="mt-2 max-w-2xl text-kib-muted">
-                {t.pricing.groupSubtitle}
-              </p>
+              <div className="mt-4 rounded-xl border-2 border-kib-red/40 bg-kib-red/15 px-5 py-4 sm:px-6 sm:py-5">
+                <p className="text-base font-bold leading-snug text-white sm:text-lg">
+                  {t.pricing.groupSubtitle}
+                </p>
+              </div>
+              <div className="mt-4 flex items-start gap-3 rounded-xl border border-white/10 bg-kib-card px-5 py-4">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-kib-red/10">
+                  <Gauge className="h-5 w-5 text-kib-red" />
+                </div>
+                <p className="text-sm font-semibold text-white sm:text-base">
+                  {t.pricing.groupKarts}
+                </p>
+              </div>
+              <ul className="mt-4 grid gap-3 sm:grid-cols-1 lg:grid-cols-3">
+                {t.pricing.groupFeatures.map((feature, index) => {
+                  const Icon = groupFeatureIcons[index] ?? CheckCircle2;
+                  return (
+                    <li
+                      key={feature}
+                      className="flex items-start gap-3 rounded-xl border border-kib-red/20 bg-kib-red/5 px-4 py-3.5"
+                    >
+                      <Icon className="mt-0.5 h-5 w-5 shrink-0 text-kib-red" />
+                      <span className="text-sm font-medium leading-snug text-white">
+                        {feature}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           </div>
 
