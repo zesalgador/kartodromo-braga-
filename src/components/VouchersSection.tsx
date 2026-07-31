@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
-import { Gift, ChevronDown, Mail } from "lucide-react";
+import { Gift, ChevronDown, Mail, MapPin } from "lucide-react";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Button } from "@/components/ui/Button";
 import { ButtonElement } from "@/components/ui/Button";
@@ -105,7 +105,10 @@ export function VouchersSection() {
               <Mail className="h-4 w-4" />
               {t.vouchers.requestByEmail}
             </Button>
-            <p className="max-w-md text-sm text-kib-muted">{t.vouchers.pickupNote}</p>
+            <p className="flex max-w-lg items-center justify-center gap-2.5 rounded-xl border border-kib-red/30 bg-kib-red/10 px-5 py-3.5 text-sm font-semibold text-white sm:text-base">
+              <MapPin className="h-5 w-5 shrink-0 text-kib-red" />
+              {t.vouchers.pickupNote}
+            </p>
           </div>
         </div>
       </div>

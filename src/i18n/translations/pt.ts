@@ -67,7 +67,7 @@ export const pt: Translations = {
     showButton: "Vouchers disponíveis",
     hideButton: "Ocultar vouchers",
     requestByEmail: "Solicitar o meu voucher por email",
-    pickupNote: "Possibilidade de recolha do voucher no kartódromo.",
+    pickupNote: "Possibilidade de recolha no Kartódromo",
     emailSubject: "Pedido de Voucher — KIB",
     emailBody:
       "Olá,\n\nGostaria de solicitar o seguinte voucher:\n\n(Indique: 10 minutos / 20 minutos / Pista reservada)\n\nNome:\n\nObrigado.",
