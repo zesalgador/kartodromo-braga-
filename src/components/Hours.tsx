@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Calendar, Clock, Sun, AlertCircle, ChevronDown } from "lucide-react";
+import { Calendar, Clock, Sun, AlertCircle, ChevronDown, AlertTriangle, Flag } from "lucide-react";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Card } from "@/components/ui/SectionTitle";
 import { useContent } from "@/i18n/useContent";
@@ -59,6 +59,24 @@ export function Hours() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionTitle title={t.hours.title} subtitle={t.hours.subtitle} />
 
+        <div
+          role="note"
+          className="mx-auto mb-10 flex max-w-3xl items-start gap-4 rounded-2xl border-2 border-kib-red/50 bg-kib-red/10 px-5 py-4 shadow-lg shadow-kib-red/10 sm:items-center sm:px-6 sm:py-5"
+        >
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-kib-red/20">
+            <AlertTriangle className="h-6 w-6 text-kib-red" />
+          </div>
+          <p className="text-sm leading-relaxed text-white sm:text-base">
+            <span className="font-black uppercase tracking-wide text-kib-red">
+              {t.hours.wetTrackNoticeTitle}
+            </span>
+            <span className="mx-2 hidden text-kib-muted sm:inline">—</span>
+            <span className="mt-1 block font-medium sm:mt-0 sm:inline">
+              {t.hours.wetTrackNotice}
+            </span>
+          </p>
+        </div>
+
         <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center">
           {scheduleTabs.map((tab) => (
             <button
@@ -77,7 +95,7 @@ export function Hours() {
           ))}
         </div>
 
-        <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-start">
+        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(240px,280px)_minmax(240px,280px)] lg:items-start">
           <Card hover={false}>
             <div className="mb-6 flex items-center gap-3">
               {activeTab === "eventos" && (
@@ -133,43 +151,71 @@ export function Hours() {
             )}
           </Card>
 
-          <aside className="rounded-2xl border border-kib-red/25 bg-kib-card p-5 shadow-lg shadow-black/20 lg:sticky lg:top-28">
-            <button
-              type="button"
-              onClick={() => setShowExceptions((open) => !open)}
-              aria-expanded={showExceptions}
-              className="flex w-full items-center justify-between gap-3 rounded-xl bg-kib-red px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-kib-red-dark"
-            >
-              <span className="flex items-center gap-2">
-                <AlertCircle className="h-5 w-5 shrink-0" />
-                {t.hours.exceptionsTitle}
-              </span>
-              <ChevronDown
-                className={`h-5 w-5 shrink-0 transition-transform duration-200 ${
-                  showExceptions ? "rotate-180" : ""
-                }`}
-              />
-            </button>
+          <div className="grid gap-6 sm:grid-cols-2 lg:contents">
+            <aside className="rounded-2xl border border-kib-red/25 bg-kib-card p-5 shadow-lg shadow-black/20 lg:sticky lg:top-28">
+              <button
+                type="button"
+                onClick={() => setShowExceptions((open) => !open)}
+                aria-expanded={showExceptions}
+                className="flex w-full items-center justify-between gap-3 rounded-xl bg-kib-red px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-kib-red-dark"
+              >
+                <span className="flex items-center gap-2">
+                  <AlertCircle className="h-5 w-5 shrink-0" />
+                  {t.hours.exceptionsTitle}
+                </span>
+                <ChevronDown
+                  className={`h-5 w-5 shrink-0 transition-transform duration-200 ${
+                    showExceptions ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
 
-            {showExceptions && (
-              <div className="mt-4">
-                <p className="mb-4 text-xs leading-relaxed text-kib-muted">
-                  {t.hours.exceptionsNote}
-                </p>
-                <ul className="space-y-2.5">
-                  {scheduleClosedDays.map((day) => (
-                    <li
-                      key={day}
-                      className="flex items-start gap-2 text-sm font-medium text-white"
-                    >
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-kib-red" />
-                      {day}
-                    </li>
-                  ))}
-                </ul>
+              {showExceptions && (
+                <div className="mt-4">
+                  <p className="mb-4 text-xs leading-relaxed text-kib-muted">
+                    {t.hours.exceptionsNote}
+                  </p>
+                  <ul className="space-y-2.5">
+                    {scheduleClosedDays.map((day) => (
+                      <li
+                        key={day}
+                        className="flex items-start gap-2 text-sm font-medium text-white"
+                      >
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-kib-red" />
+                        {day}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </aside>
+
+            <aside className="rounded-2xl border-2 border-kib-red bg-kib-red/10 p-5 shadow-lg shadow-kib-red/10 lg:sticky lg:top-28">
+              <div className="mb-4 flex items-center gap-2">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-kib-red/20">
+                  <Flag className="h-5 w-5 text-kib-red" />
+                </div>
+                <h4 className="text-sm font-black uppercase leading-tight tracking-wide text-kib-red">
+                  {t.hours.championshipClosureTitle}
+                </h4>
               </div>
-            )}
-          </aside>
+
+              <ul className="mb-4 space-y-2">
+                {t.hours.championshipClosureDates.map((dates) => (
+                  <li
+                    key={dates}
+                    className="rounded-lg border border-kib-red/30 bg-kib-black/40 px-3 py-2 text-sm font-bold text-white"
+                  >
+                    {dates}
+                  </li>
+                ))}
+              </ul>
+
+              <p className="text-xs leading-relaxed font-medium text-kib-red">
+                {t.hours.championshipClosureReason}
+              </p>
+            </aside>
+          </div>
         </div>
       </div>
     </section>

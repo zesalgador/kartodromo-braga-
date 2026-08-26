@@ -120,6 +120,11 @@ export interface Translations {
     notes: string;
     exceptionsTitle: string;
     exceptionsNote: string;
+    wetTrackNoticeTitle: string;
+    wetTrackNotice: string;
+    championshipClosureTitle: string;
+    championshipClosureReason: string;
+    championshipClosureDates: string[];
     tabs: Record<ScheduleTab, { label: string; shortLabel: string }>;
     content: Record<
       ScheduleTab,

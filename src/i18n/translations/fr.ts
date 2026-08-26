@@ -167,6 +167,15 @@ export const fr: Translations = {
     notes: "Notes",
     exceptionsTitle: "Jours d'exception",
     exceptionsNote: "Valable pour tous les horaires du kartódromo.",
+    wetTrackNoticeTitle: "Avis",
+    wetTrackNotice: "En cas de piste mouillée, nous ne proposons pas de location de karts.",
+    championshipClosureTitle: "Fermé (karts de location)",
+    championshipClosureReason:
+      "En raison des épreuves du Championnat National de Karting.",
+    championshipClosureDates: [
+      "28, 29 et 30 août",
+      "4, 5 et 6 septembre",
+    ],
     tabs: {
       eventos: {
         label: "Horaires karts et motos privés",
