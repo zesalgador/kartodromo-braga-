@@ -10,7 +10,7 @@ export function Hero() {
   const t = useTranslations();
 
   const handleHoursClick = () => {
-    presetHoursTab("verao");
+    presetHoursTab("aluguer");
   };
 
   return (

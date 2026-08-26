@@ -36,7 +36,7 @@ export function Hours() {
       }
 
       if (window.location.hash === "#horarios") {
-        setActiveTab("verao");
+        setActiveTab("aluguer");
       }
     };
 

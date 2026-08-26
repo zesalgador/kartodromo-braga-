@@ -169,12 +169,12 @@ export const fr: Translations = {
     exceptionsNote: "Valable pour tous les horaires du kartódromo.",
     tabs: {
       eventos: {
-        label: "Horaires de location pour karts et motos privés (disponible jusqu'au 24 juillet)",
+        label: "Horaires karts et motos privés",
         shortLabel: "Karts Privés",
       },
       aluguer: {
-        label: "Horaires karts location (avant le 24 juillet)",
-        shortLabel: "Avant 24 juil.",
+        label: "Horaires karts de location",
+        shortLabel: "Karts Location",
       },
       verao: {
         label: "Horaires karts location (24 juillet au 23 août)",
@@ -183,12 +183,12 @@ export const fr: Translations = {
     },
     content: {
       eventos: {
-        title: "Horaires de location pour karts et motos privés (disponible jusqu'au 24 juillet)",
+        title: "Horaires karts et motos privés",
         schedule: ["9:00 – 13:00", "Pause déjeuner", "14:00 – 18:00", "Tous les jours"],
       },
       aluguer: {
-        title: "Horaires karts location (avant le 24 juillet)",
-        schedule: ["9:00 – 12:30", "14:30 – 19:00"],
+        title: "Horaires karts de location",
+        schedule: ["9:30 – 13:00", "14:30 – 19:00"],
       },
       verao: {
         title: "Horaires karts location (24 juillet au 23 août)",
