@@ -197,7 +197,8 @@ export const pt: Translations = {
       },
       aluguer: {
         title: "Horário karts de aluguer",
-        schedule: ["9:30 – 13:00", "14:30 – 19:00"],
+        schedule: ["9:30 – 13:00", "14:30 – 18:30"],
+        notes: ["Segunda — fechado", "Terça-feira — aberto só de tarde"],
       },
       verao: {
         title: "Horário karts aluguer (24 julho até 23 agosto)",
