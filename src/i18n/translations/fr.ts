@@ -84,6 +84,11 @@ export const fr: Translations = {
         alt: "Chèque-cadeau — 20 minutes en kart CRG au Kartódromo Internacional de Braga",
       },
       {
+        title: "30 Minutes en Kart CRG",
+        description: "Chèque de location de kart — le cadeau parfait pour les amateurs de vitesse.",
+        alt: "Chèque-cadeau — 30 minutes en kart CRG au Kartódromo Internacional de Braga",
+      },
+      {
         title: "Action sur Piste Réservée",
         description: "Expérience exclusive pour vous et votre groupe sur piste réservée.",
         alt: "Chèque-cadeau — action sur piste réservée au Kartódromo Internacional de Braga",

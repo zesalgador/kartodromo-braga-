@@ -12,6 +12,7 @@ import { useTranslations } from "@/i18n/LanguageProvider";
 const voucherImages = [
   "/images/vouchers/voucher-10-minutos.png",
   "/images/vouchers/voucher-20-minutos.png",
+  "/images/vouchers/voucher-30-minutos.jpg",
   "/images/vouchers/voucher-pista-reservada.png",
 ];
 

@@ -84,6 +84,11 @@ export const en: Translations = {
         alt: "Gift voucher — 20 minutes in a CRG kart at Kartódromo Internacional de Braga",
       },
       {
+        title: "30 Minutes in a CRG Kart",
+        description: "Kart rental voucher — the perfect gift for speed lovers.",
+        alt: "Gift voucher — 30 minutes in a CRG kart at Kartódromo Internacional de Braga",
+      },
+      {
         title: "Reserved Track Experience",
         description: "An exclusive experience for you and your group on a reserved track.",
         alt: "Gift voucher — reserved track experience at Kartódromo Internacional de Braga",
