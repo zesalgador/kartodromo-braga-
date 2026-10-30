@@ -264,6 +264,11 @@ export const en: Translations = {
         alt: "Pack of karts racing at Kartódromo Internacional de Braga",
       },
       {
+        title: "Session on Track",
+        caption: "Karts on track at Kartódromo Internacional de Braga.",
+        alt: "Karts taking a corner at Kartódromo Internacional de Braga",
+      },
+      {
         title: "Behind the Scenes",
         caption:
           "Lewis Hamilton racing at the Braga kartódromo during the world karting championship",

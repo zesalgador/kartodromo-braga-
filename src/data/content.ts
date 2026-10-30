@@ -23,6 +23,7 @@ export const galleryImageSources = [
   { src: "/images/galeria-grupo-grelha.png", featured: true as const },
   { src: "/images/galeria-x30-largada.png" },
   { src: "/images/galeria-corrida-karts.jpg" },
+  { src: "/images/galeria-pista-curvas.jpg" },
   { src: "/images/galeria-bastidores.jpg" },
   { src: "/images/pista-karting.jpg" },
   { src: "/images/hero-pista-aerea.png" },
