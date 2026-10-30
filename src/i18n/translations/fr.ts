@@ -401,7 +401,7 @@ export const fr: Translations = {
     ],
     groupBanner: "Tarifs Location de Groupe — 12 à 20 karts",
     formatLabel: "Format",
-    minMax: "Minimum 12 participants | Maximum 20 participants",
+    minMax: "Minimum 10 participants | Maximum 20 participants",
     individual: {
       adult: "Karting Individuel Adulte — CRG",
       child: "Karting Enfant",
