@@ -415,7 +415,7 @@ export const pt: Translations = {
     individual: {
       crg270: "Kart 270cc",
       crg390: "Kart 390cc",
-      bilugar: "Kart Bi-Lugar",
+      bilugar: "Kart Bi-lugar (2 pessoas)",
       child: "Kart Criança",
     },
     durations: {
