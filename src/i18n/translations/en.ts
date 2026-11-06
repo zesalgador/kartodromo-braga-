@@ -198,11 +198,11 @@ export const en: Translations = {
     content: {
       eventos: {
         title: "Private kart and bike hours",
-        schedule: ["9:00 – 13:00", "Lunch break", "14:00 – 18:00", "Every day"],
+        schedule: ["9:00 – 18:00", "Every day"],
       },
       aluguer: {
         title: "Rental kart hours",
-        schedule: ["9:30 – 13:00", "14:30 – 18:30"],
+        schedule: ["9:00 – 13:00", "14:30 – 17:30"],
         notes: ["Monday — closed", "Tuesday — open afternoons only"],
       },
       verao: {

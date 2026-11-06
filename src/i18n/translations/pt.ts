@@ -198,11 +198,11 @@ export const pt: Translations = {
     content: {
       eventos: {
         title: "Horário para karts e motas privados",
-        schedule: ["9:00 – 13:00", "Pausa para almoço", "14:00 – 18:00", "Todos os dias"],
+        schedule: ["9:00 – 18:00", "Todos os dias"],
       },
       aluguer: {
         title: "Horário karts de aluguer",
-        schedule: ["9:30 – 13:00", "14:30 – 18:30"],
+        schedule: ["9:00 – 13:00", "14:30 – 17:30"],
         notes: ["Segunda — fechado", "Terça-feira — aberto só de tarde"],
       },
       verao: {
