@@ -189,9 +189,10 @@ export interface Translations {
     formatLabel: string;
     minMax: string;
     individual: {
-      adult: string;
-      child: string;
+      crg270: string;
+      crg390: string;
       bilugar: string;
+      child: string;
     };
     durations: {
       min10: string;

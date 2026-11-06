@@ -413,9 +413,10 @@ export const fr: Translations = {
     formatLabel: "Format",
     minMax: "Minimum 10 participants | Maximum 20 participants",
     individual: {
-      adult: "Karting Individuel Adulte — CRG",
-      child: "Karting Enfant",
-      bilugar: "Karting Biplace — Adulte + Enfant",
+      crg270: "Kart 270cc",
+      crg390: "Kart 390cc",
+      bilugar: "Kart Biplace",
+      child: "Kart Enfant",
     },
     durations: {
       min10: "10 minutes",

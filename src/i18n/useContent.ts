@@ -51,21 +51,21 @@ export function useContent() {
 
     const individualPricing = [
       {
-        title: t.pricing.individual.adult,
+        title: t.pricing.individual.crg270,
         icon: "helmet" as const,
         prices: [
           { duration: t.pricing.durations.min10, price: "20€" },
-          { duration: t.pricing.durations.min20, price: "40€" },
-          { duration: t.pricing.durations.min30, price: "60€" },
+          { duration: t.pricing.durations.min20, price: "35€" },
+          { duration: t.pricing.durations.min30, price: "55€" },
         ],
       },
       {
-        title: t.pricing.individual.child,
-        icon: "child" as const,
+        title: t.pricing.individual.crg390,
+        icon: "gauge" as const,
         prices: [
-          { duration: t.pricing.durations.min10, price: "20€" },
-          { duration: t.pricing.durations.min20, price: "40€" },
-          { duration: t.pricing.durations.min30, price: "60€" },
+          { duration: t.pricing.durations.min10, price: "25€" },
+          { duration: t.pricing.durations.min20, price: "45€" },
+          { duration: t.pricing.durations.min30, price: "70€" },
         ],
       },
       {
@@ -73,8 +73,17 @@ export function useContent() {
         icon: "users" as const,
         prices: [
           { duration: t.pricing.durations.min10, price: "20€" },
-          { duration: t.pricing.durations.min20, price: "40€" },
-          { duration: t.pricing.durations.min30, price: "60€" },
+          { duration: t.pricing.durations.min20, price: "35€" },
+          { duration: t.pricing.durations.min30, price: "55€" },
+        ],
+      },
+      {
+        title: t.pricing.individual.child,
+        icon: "child" as const,
+        prices: [
+          { duration: t.pricing.durations.min10, price: "15€" },
+          { duration: t.pricing.durations.min20, price: "25€" },
+          { duration: t.pricing.durations.min30, price: "40€" },
         ],
       },
     ];

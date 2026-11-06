@@ -25,6 +25,7 @@ import { useTranslations } from "@/i18n/LanguageProvider";
 
 const pricingIcons = {
   helmet: User,
+  gauge: Gauge,
   child: Baby,
   users: UserPlus,
 };
@@ -54,7 +55,7 @@ export function Pricing() {
             </div>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {individualPricing.map((item) => {
               const Icon = pricingIcons[item.icon];
               return (
