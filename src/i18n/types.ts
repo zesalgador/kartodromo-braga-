@@ -137,6 +137,7 @@ export interface Translations {
     subtitle: string;
     email: string;
     phone: string;
+    phoneNote: string;
     instagram: string;
     location: string;
     ctaTitle: string;

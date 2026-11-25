@@ -23,24 +23,28 @@ export function Contact() {
       label: t.contact.email,
       value: siteConfig.email,
       href: siteConfig.gmailComposeHref,
+      note: undefined,
     },
     {
       icon: Phone,
       label: t.contact.phone,
       value: siteConfig.phone,
       href: siteConfig.phoneHref,
+      note: t.contact.phoneNote,
     },
     {
       icon: Instagram,
       label: t.contact.instagram,
       value: siteConfig.instagram,
       href: siteConfig.instagramUrl,
+      note: undefined,
     },
     {
       icon: MapPin,
       label: t.contact.location,
       value: siteConfig.address,
       href: siteConfig.mapsUrl,
+      note: undefined,
     },
   ];
 
@@ -64,7 +68,14 @@ export function Contact() {
                   <p className="mb-1 text-xs font-bold uppercase tracking-wide text-kib-muted">
                     {item.label}
                   </p>
-                  <p className="text-sm font-semibold text-white">{item.value}</p>
+                  <p className="text-sm font-semibold text-white">
+                    {item.value}
+                    {item.note ? (
+                      <span className="ml-2 font-medium text-kib-muted">
+                        {item.note}
+                      </span>
+                    ) : null}
+                  </p>
                 </Card>
               );
 

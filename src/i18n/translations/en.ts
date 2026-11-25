@@ -231,6 +231,7 @@ export const en: Translations = {
       "For bookings, information or private events, get in touch with us.",
     email: "Email",
     phone: "Phone",
+    phoneNote: "(Wed – Sun)",
     instagram: "Instagram",
     location: "Location",
     ctaTitle: "Ready to hit the throttle?",

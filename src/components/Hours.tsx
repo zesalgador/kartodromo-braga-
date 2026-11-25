@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Calendar, Clock, Sun, AlertCircle, ChevronDown, AlertTriangle, Flag } from "lucide-react";
+import { Calendar, Clock, Sun, AlertCircle, ChevronDown, AlertTriangle } from "lucide-react";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Card } from "@/components/ui/SectionTitle";
 import { useContent } from "@/i18n/useContent";
@@ -95,23 +95,23 @@ export function Hours() {
           ))}
         </div>
 
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(240px,280px)_minmax(240px,280px)] lg:items-start">
-          <Card hover={false}>
-            <div className="mb-6 flex items-center gap-3">
+        <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-start">
+          <Card hover={false} className="px-6 py-7 sm:px-8 sm:py-8">
+            <div className="mb-8 flex items-center gap-3">
               {activeTab === "eventos" && (
-                <Calendar className="h-6 w-6 text-kib-red" />
+                <Calendar className="h-7 w-7 text-kib-red" />
               )}
               {activeTab === "aluguer" && (
-                <Clock className="h-6 w-6 text-kib-red" />
+                <Clock className="h-7 w-7 text-kib-red" />
               )}
               {activeTab === "verao" && (
-                <Sun className="h-6 w-6 text-kib-red" />
+                <Sun className="h-7 w-7 text-kib-red" />
               )}
-              <h3 className="text-lg font-bold text-white">{content.title}</h3>
+              <h3 className="text-xl font-bold text-white sm:text-2xl">{content.title}</h3>
             </div>
 
             {content.period && (
-              <div className="mb-6 rounded-lg border border-kib-red/20 bg-kib-red/5 px-4 py-3">
+              <div className="mb-8 rounded-lg border border-kib-red/20 bg-kib-red/5 px-5 py-4">
                 <p className="text-xs font-bold uppercase tracking-wide text-kib-red">
                   {t.hours.period}
                 </p>
@@ -119,14 +119,14 @@ export function Hours() {
               </div>
             )}
 
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               {content.schedule.map((item) => (
                 <li
                   key={item}
-                  className="flex items-center gap-3 rounded-lg border border-white/5 bg-kib-black/50 px-4 py-3"
+                  className="flex items-center gap-4 rounded-xl border border-white/5 bg-kib-black/50 px-5 py-4"
                 >
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-kib-red" />
-                  <span className="text-sm font-medium text-white sm:text-base">
+                  <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-kib-red" />
+                  <span className="text-base font-semibold text-white sm:text-lg">
                     {item}
                   </span>
                 </li>
@@ -134,14 +134,14 @@ export function Hours() {
             </ul>
 
             {content.notes && (
-              <div className="mt-6 space-y-2">
+              <div className="mt-8 space-y-3">
                 <p className="text-xs font-bold uppercase tracking-wide text-kib-red">
                   {t.hours.notes}
                 </p>
                 {content.notes.map((note) => (
                   <p
                     key={note}
-                    className="flex items-start gap-2 text-sm text-kib-muted"
+                    className="flex items-start gap-2.5 text-sm text-kib-muted sm:text-base"
                   >
                     <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-kib-red" />
                     {note}
@@ -151,71 +151,43 @@ export function Hours() {
             )}
           </Card>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:contents">
-            <aside className="rounded-2xl border border-kib-red/25 bg-kib-card p-5 shadow-lg shadow-black/20 lg:sticky lg:top-28">
-              <button
-                type="button"
-                onClick={() => setShowExceptions((open) => !open)}
-                aria-expanded={showExceptions}
-                className="flex w-full items-center justify-between gap-3 rounded-xl bg-kib-red px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-kib-red-dark"
-              >
-                <span className="flex items-center gap-2">
-                  <AlertCircle className="h-5 w-5 shrink-0" />
-                  {t.hours.exceptionsTitle}
-                </span>
-                <ChevronDown
-                  className={`h-5 w-5 shrink-0 transition-transform duration-200 ${
-                    showExceptions ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
+          <aside className="rounded-2xl border border-kib-red/25 bg-kib-card p-5 shadow-lg shadow-black/20 lg:sticky lg:top-28">
+            <button
+              type="button"
+              onClick={() => setShowExceptions((open) => !open)}
+              aria-expanded={showExceptions}
+              className="flex w-full items-center justify-between gap-3 rounded-xl bg-kib-red px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-kib-red-dark"
+            >
+              <span className="flex items-center gap-2">
+                <AlertCircle className="h-5 w-5 shrink-0" />
+                {t.hours.exceptionsTitle}
+              </span>
+              <ChevronDown
+                className={`h-5 w-5 shrink-0 transition-transform duration-200 ${
+                  showExceptions ? "rotate-180" : ""
+                }`}
+              />
+            </button>
 
-              {showExceptions && (
-                <div className="mt-4">
-                  <p className="mb-4 text-xs leading-relaxed text-kib-muted">
-                    {t.hours.exceptionsNote}
-                  </p>
-                  <ul className="space-y-2.5">
-                    {scheduleClosedDays.map((day) => (
-                      <li
-                        key={day}
-                        className="flex items-start gap-2 text-sm font-medium text-white"
-                      >
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-kib-red" />
-                        {day}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </aside>
-
-            <aside className="rounded-2xl border-2 border-kib-red bg-kib-red/10 p-5 shadow-lg shadow-kib-red/10 lg:sticky lg:top-28">
-              <div className="mb-4 flex items-center gap-2">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-kib-red/20">
-                  <Flag className="h-5 w-5 text-kib-red" />
-                </div>
-                <h4 className="text-sm font-black uppercase leading-tight tracking-wide text-kib-red">
-                  {t.hours.championshipClosureTitle}
-                </h4>
+            {showExceptions && (
+              <div className="mt-4">
+                <p className="mb-4 text-xs leading-relaxed text-kib-muted">
+                  {t.hours.exceptionsNote}
+                </p>
+                <ul className="space-y-2.5">
+                  {scheduleClosedDays.map((day) => (
+                    <li
+                      key={day}
+                      className="flex items-start gap-2 text-sm font-medium text-white"
+                    >
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-kib-red" />
+                      {day}
+                    </li>
+                  ))}
+                </ul>
               </div>
-
-              <ul className="mb-4 space-y-2">
-                {t.hours.championshipClosureDates.map((dates) => (
-                  <li
-                    key={dates}
-                    className="rounded-lg border border-kib-red/30 bg-kib-black/40 px-3 py-2 text-sm font-bold text-white"
-                  >
-                    {dates}
-                  </li>
-                ))}
-              </ul>
-
-              <p className="text-xs leading-relaxed font-medium text-kib-red">
-                {t.hours.championshipClosureReason}
-              </p>
-            </aside>
-          </div>
+            )}
+          </aside>
         </div>
       </div>
     </section>
