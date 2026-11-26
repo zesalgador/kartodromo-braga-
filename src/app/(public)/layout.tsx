@@ -1,0 +1,17 @@
+import { Header } from "@/components/Header";
+import { Footer, FloatingContact } from "@/components/Footer";
+
+export default function PublicLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <>
+      <Header />
+      {children}
+      <Footer />
+      <FloatingContact />
+    </>
+  );
+}
