@@ -249,6 +249,8 @@ export const fr: Translations = {
     call: "Appeler",
     openQuickContact: "Contact rapide",
     closeQuickContact: "Fermer le contact rapide",
+    checkVoucher: "Consulter le voucher",
+    reservedArea: "Espace réservé",
   },
   gallery: {
     title: "Galerie",

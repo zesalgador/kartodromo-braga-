@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Phone, Mail, X } from "lucide-react";
 import { siteConfig } from "@/data/content";
 import { Logo } from "@/components/ui/Logo";
@@ -83,6 +84,17 @@ export function Footer() {
         <p className="mt-6 text-center text-xs text-kib-muted">
           © {new Date().getFullYear()} {t.site.name}. {t.footer.rights}
         </p>
+        <nav className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] text-white/35">
+          <Link href="/consultar-voucher" className="transition-colors hover:text-white/70">
+            {t.footer.checkVoucher}
+          </Link>
+          <span aria-hidden="true" className="hidden text-white/20 sm:inline">
+            ·
+          </span>
+          <Link href="/admin/login" className="transition-colors hover:text-white/70">
+            {t.footer.reservedArea}
+          </Link>
+        </nav>
       </div>
     </footer>
   );

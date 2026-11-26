@@ -30,6 +30,13 @@ export function extractVoucherCode(input: string): string | null {
   return isValidVoucherCode(extracted) ? extracted : null;
 }
 
+export function parseVoucherLookupInput(input: string): string | null {
+  const extracted = extractVoucherCode(input);
+  if (extracted) return extracted;
+  const prefixed = `KIB-${normalizeVoucherCode(input).replace(/^KIB-/, "")}`;
+  return isValidVoucherCode(prefixed) ? prefixed : null;
+}
+
 export const VOUCHER_PUBLIC_ORIGIN = "https://kib.pt";
 
 export function voucherPublicUrl(code: string): string {

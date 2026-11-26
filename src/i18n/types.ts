@@ -154,6 +154,8 @@ export interface Translations {
     call: string;
     openQuickContact: string;
     closeQuickContact: string;
+    checkVoucher: string;
+    reservedArea: string;
   };
   gallery: {
     title: string;

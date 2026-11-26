@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { extractVoucherCode, generateVoucherCode, isValidVoucherCode, normalizeVoucherCode, voucherPublicUrl } from "./codes";
+import {
+  extractVoucherCode,
+  generateVoucherCode,
+  isValidVoucherCode,
+  normalizeVoucherCode,
+  parseVoucherLookupInput,
+  voucherPublicUrl,
+} from "./codes";
 import {
   PUBLIC_LOOKUP_RPC,
   PUBLIC_VOUCHER_FIELDS,
@@ -40,6 +47,12 @@ describe("códigos de voucher", () => {
   it("extrai o código de um URL público do QR", () => {
     expect(extractVoucherCode("https://kib.pt/v/KIB-AB12CD34")).toBe("KIB-AB12CD34");
     expect(extractVoucherCode("KIB-AB12CD34")).toBe("KIB-AB12CD34");
+  });
+
+  it("aceita o código completo ou só o sufixo na consulta manual", () => {
+    expect(parseVoucherLookupInput("kib-5k74y39d")).toBe("KIB-5K74Y39D");
+    expect(parseVoucherLookupInput("5K74Y39D")).toBe("KIB-5K74Y39D");
+    expect(parseVoucherLookupInput("ABC")).toBeNull();
   });
 
   it("o URL público do QR é sempre https://kib.pt/v/{código}", () => {
